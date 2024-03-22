@@ -1,10 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Apropos from "./pages/Apropos";
+import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
+import "./index.scss";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+        <Router>
+            <Header />
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/A-propos' element={<Apropos />} />
+                <Route path='*' element={<NotFound />} />
+            </Routes>
+        </Router>
+    </React.StrictMode>
+);
