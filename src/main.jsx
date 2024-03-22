@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Apropos from "./pages/Apropos";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path='/A-propos' element={<Apropos />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
+            <Footer />
         </Router>
     </React.StrictMode>
 );
