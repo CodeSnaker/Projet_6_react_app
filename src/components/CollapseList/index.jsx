@@ -33,9 +33,6 @@ const CollapseList = ({ category, entries }) => {
     const handleClickChevron = () => {
         setClickedState((clickedState) => !clickedState);
     };
-    // const handleCollapse = (e) => {
-    //     e.currentTarget.classList.toggle("collapsed");
-    // };
 
     let list = "";
     if (typeof entries === "string") {
