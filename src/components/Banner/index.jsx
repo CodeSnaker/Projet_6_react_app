@@ -1,19 +1,19 @@
-function BannerBackground({ src, alt }) {
-    return (
-        <>
-            <img className='banner-background' src={src} alt={alt} />
-        </>
-    );
-}
+import PropTypes from "prop-types";
 
-function Banner({ src, alt, text }) {
+const Banner = ({ src, alt, text }) => {
     return (
         <div className='banner'>
-            <BannerBackground src={src} alt={alt} />
+            <img className='banner-background' src={src} alt={alt} />
             <div className='banner-filter'></div>
             <div className='banner-content'>{text}</div>
         </div>
     );
-}
+};
+
+Banner.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string.isRequired,
+    text: PropTypes.string,
+};
 
 export default Banner;

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logo_kasa.png";
 import LogoMobile from "../../assets/logo_kasa_mobile.png";
 
-function Header() {
+const Header = () => {
     return (
         <header>
             <Link to='/'>
@@ -18,6 +18,6 @@ function Header() {
             </nav>
         </header>
     );
-}
+};
 
 export default Header;
