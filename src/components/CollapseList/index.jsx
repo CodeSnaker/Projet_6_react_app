@@ -38,9 +38,8 @@ const CollapseList = ({ category, entries }) => {
     if (typeof entries === "string") {
         list = <p>{entries}</p>;
     } else {
-        list = entries.map((entry) => {
-            console.log(entry);
-            return <li>{entry}</li>;
+        list = entries.map((entry, index) => {
+            return <li key={index}>{entry}</li>;
         });
     }
 
