@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./styles.scss";
 
 const Banner = ({ src, alt, text }) => {
     return (

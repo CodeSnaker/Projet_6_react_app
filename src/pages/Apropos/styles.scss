@@ -1,0 +1,14 @@
+.a-propos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 38px 100px;
+
+    .collapse-bars {
+        width: 1024px;
+        margin-top: 38px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+}

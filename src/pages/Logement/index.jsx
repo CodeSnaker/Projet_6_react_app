@@ -1,12 +1,12 @@
 /* Replace this by API request later */
 import data from "../../assets/resources.json";
-import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import Rating from "../../components/Rating";
 import Slideshow from "../../components/Slideshow";
 import Tag from "../../components/Tag";
 import CollapseList from "../../components/CollapseList";
 import NotFound from "../NotFound";
+import "./styles.scss";
 
 const Logement = () => {
     const { logementId } = useParams();

@@ -1,0 +1,94 @@
+@import "../../utils/styles/colors";
+
+.collapse-bar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    gap: 0;
+
+    .top-bar {
+        position: relative;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $primaryRed;
+        border-radius: 5px;
+        padding: 10px;
+
+        p {
+            margin: 0;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .fa-chevron-up {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            width: 32px;
+            height: 32px;
+
+            &.closed {
+                background-color: $primaryRed;
+                transform: rotate(0deg);
+                transition: transform 0.3s ease-in-out;
+            }
+            &.open {
+                transform: rotate(-180deg);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .collapse-text {
+        position: relative;
+        transform: translateY(0);
+        z-index: 0;
+        &.open {
+            background-color: $backgroundGrey;
+            max-height: 200px;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(0);
+            transform-origin: 50% top;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+        &.closed {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            padding: 0 10px;
+            transform: translateY(-300px);
+            transform-origin: 50% top;
+        }
+
+        ul li,
+        p {
+            width: 100%;
+            text-align: justify;
+            color: black;
+            font-weight: 400;
+            font-size: 18px;
+            list-style-type: none;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            padding: 0;
+            gap: 3px;
+        }
+    }
+}

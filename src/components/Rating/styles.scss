@@ -1,0 +1,11 @@
+@import "../../utils/styles/colors";
+
+.rating {
+    .fa-star {
+        color: #e3e3e3;
+
+        &.active {
+            color: $primaryRed;
+        }
+    }
+}

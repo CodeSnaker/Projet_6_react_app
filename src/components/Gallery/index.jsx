@@ -1,5 +1,5 @@
 import Card from "../Card";
-import { useEffect } from "react";
+import "./styles.scss";
 
 /* Later replace this import by a fetch request */
 import locations from "../../assets/resources.json";

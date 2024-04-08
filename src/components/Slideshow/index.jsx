@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import rightArrow from "../../assets/carousel_arrow_right.svg";
 import leftArrow from "../../assets/carousel_arrow_left.svg";
 import { useState, useRef, useEffect } from "react";
+import "./styles.scss";
 
 const Slideshow = ({ images }) => {
     let carouselRef = useRef(null);

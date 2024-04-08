@@ -1,6 +1,7 @@
 import Banner from "../../components/Banner";
 import HomeBannerBackground from "../../assets/beach-and-cliff-background.webp";
 import Gallery from "../../components/Gallery";
+import "./styles.scss";
 
 const Home = () => {
     return (

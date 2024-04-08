@@ -1,4 +1,5 @@
 import LogoFooter from "../../assets/logo_kasa_footer.png";
+import "./styles.scss";
 
 const Footer = () => {
     return (

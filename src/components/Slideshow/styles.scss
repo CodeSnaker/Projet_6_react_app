@@ -1,0 +1,56 @@
+$carouselWidth: 1240px;
+
+.carousel {
+    position: relative;
+    width: $carouselWidth;
+    height: 415px;
+    border-radius: 25px;
+    overflow: hidden;
+
+    .carousel-gallery {
+        display: flex;
+        justify-content: stretch;
+        border-radius: inherit;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+
+        .carousel-picture {
+            width: $carouselWidth;
+            height: 100%;
+            border-radius: inherit;
+            object-fit: cover;
+        }
+    }
+
+    .carousel-arrow {
+        position: absolute;
+        height: 79px;
+        object-fit: cover;
+        z-index: 2;
+
+        &.right {
+            top: 50%;
+            right: 24px;
+            transform: translate(0, -50%);
+        }
+
+        &.left {
+            top: 50%;
+            left: 24px;
+            transform: translate(0, -50%);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .carousel-gallery-index {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 25px;
+        color: white;
+    }
+}

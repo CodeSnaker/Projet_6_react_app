@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Logo from "../../assets/logo_kasa.png";
 import LogoMobile from "../../assets/logo_kasa_mobile.png";
+import "./styles.scss";
 
 const Header = () => {
     let location = useLocation();

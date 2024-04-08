@@ -2,6 +2,7 @@ import Banner from "../../components/Banner";
 import bannerBackground from "../../assets/forest-and-mountains-background.webp";
 import CollapseList from "../../components/CollapseList";
 import data from "../../assets/apropos-resources.json";
+import "./styles.scss";
 
 const Apropos = () => {
     const entries = data.map((entry, index) => (

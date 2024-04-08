@@ -1,0 +1,27 @@
+@import "../../utils/styles/colors";
+
+.thumbnail {
+    position: relative;
+    border-radius: 10px;
+    width: 340px;
+    height: 340px;
+    background-color: $primaryRed;
+
+    img {
+        object-fit: cover;
+        height: inherit;
+        width: 100%;
+        border-radius: inherit;
+        z-index: 0;
+    }
+
+    .thumbnail-title {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        color: white;
+        size: 18px;
+        font-weight: 700;
+        z-index: 1;
+    }
+}

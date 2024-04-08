@@ -1,0 +1,12 @@
+@import "../../utils/styles/colors";
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primaryRed;
+    height: 25px;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+}
