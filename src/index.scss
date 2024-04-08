@@ -111,7 +111,7 @@ header {
             border-radius: 10px;
             width: 340px;
             height: 340px;
-            background-color: $backgroundRed;
+            background-color: $primaryRed;
 
             img {
                 object-fit: cover;
@@ -147,16 +147,16 @@ header {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    box-sizing: border-box;
     gap: 0;
 
     .top-bar {
         position: relative;
         z-index: 100;
-        width: inherit;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: $backgroundRed;
+        background-color: $primaryRed;
         border-radius: 5px;
         padding: 10px;
 
@@ -177,7 +177,7 @@ header {
             height: 32px;
 
             &.closed {
-                background-color: $backgroundRed;
+                background-color: $primaryRed;
                 transform: rotate(0deg);
                 transition: transform 0.3s ease-in-out;
             }
@@ -185,13 +185,16 @@ header {
                 transform: rotate(-180deg);
                 transition: transform 0.3s ease-in-out;
             }
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 
     .collapse-text {
         position: relative;
         transform: translateY(0);
-        width: inherit;
         z-index: 0;
         &.open {
             background-color: $backgroundGrey;
@@ -211,13 +214,23 @@ header {
             transform-origin: 50% top;
         }
 
-        li,
+        ul li,
         p {
             width: 100%;
             text-align: justify;
             color: black;
             font-weight: 400;
             font-size: 18px;
+            list-style-type: none;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            padding: 0;
+            gap: 3px;
         }
     }
 }
@@ -237,7 +250,7 @@ header {
     padding-bottom: 22px;
 
     .not-found {
-        color: $backgroundRed;
+        color: $primaryRed;
         font-size: 200px;
         font-weight: 700;
         text-align: center;
@@ -245,7 +258,7 @@ header {
     }
 
     .not-found-prompt {
-        color: $backgroundRed;
+        color: $primaryRed;
         font-size: 36px;
         font-weight: 500;
         text-align: center;
@@ -263,6 +276,99 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px 100px;
+
+    .logement-infos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 24px 0;
+
+        .logement-head {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .logement-head-text {
+                h1 {
+                    font-size: 36px;
+                    color: $primaryRed;
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 18px;
+                    margin: 0;
+                }
+            }
+
+            .tags {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                .tag {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $primaryRed;
+                    min-width: 115px;
+                    height: 25px;
+                    padding: 0 40px;
+                    border-radius: 10px;
+                    color: white;
+                    font-size: 14px;
+                }
+            }
+        }
+        .host-and-rating {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 21px;
+            .host {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                .host-picture {
+                    height: 64px;
+                    width: 64px;
+                    object-fit: cover;
+                    border-radius: 32px;
+                }
+                .host-name {
+                    color: $primaryRed;
+                    font-size: 18px;
+                    text-align: right;
+                }
+            }
+
+            .rating {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 36px;
+                width: 196px;
+                gap: 4px;
+
+                .fa-star {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .logement-bars {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 100%;
+        gap: 76px;
+
+        .collapse-bar {
+            width: 586px;
+        }
+    }
 }
 
 .carousel {
@@ -325,7 +431,7 @@ header {
         color: #e3e3e3;
 
         &.active {
-            color: $backgroundRed;
+            color: $primaryRed;
         }
     }
 }

@@ -38,9 +38,13 @@ const CollapseList = ({ category, entries }) => {
     if (typeof entries === "string") {
         list = <p>{entries}</p>;
     } else {
-        list = entries.map((entry, index) => {
-            return <li key={index}>{entry}</li>;
-        });
+        list = (
+            <ul>
+                {entries.map((entry, index) => {
+                    return <li key={index}>{entry}</li>;
+                })}
+            </ul>
+        );
     }
 
     return (
@@ -49,9 +53,8 @@ const CollapseList = ({ category, entries }) => {
                 <p className='top-bar-content'>{category}</p>
                 <i
                     className={
-                        clickedState
-                            ? "fa-solid fa-chevron-up open"
-                            : "fa-solid fa-chevron-up closed"
+                        "fa-solid fa-chevron-up " +
+                        (clickedState ? "open" : "closed")
                     }
                     onClick={handleClickChevron}
                 ></i>
