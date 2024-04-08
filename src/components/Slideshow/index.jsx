@@ -23,19 +23,19 @@ const Slideshow = ({ images }) => {
         setIndex((index) => (index === 0 ? images.length - 1 : index - 1));
     };
 
-    // let carouselPictures = null;
-    // let i = 0;
-    // carouselPictures = images.map((image) => {
-    //     return (
-    //         <img
-    //             className={"carousel-picture" + (i === 0 ? " active" : "")}
-    //             src={image}
-    //             alt='Image du logement'
-    //             id={i}
-    //             key={i++}
-    //         />
-    //     );
-    // });
+    let carouselPictures = null;
+    let i = 0;
+    carouselPictures = images.map((image, index) => {
+        return (
+            <img
+                className={"carousel-picture" + (i === 0 ? " active" : "")}
+                src={image}
+                alt='Image du logement'
+                id={i}
+                key={i++}
+            />
+        );
+    });
 
     // TODO change carousel-gallery to img
     // TODO test carousel animation

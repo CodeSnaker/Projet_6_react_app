@@ -12,6 +12,13 @@ a:visited {
     text-decoration: none;
 }
 
+body {
+    margin: 0;
+}
+#root {
+    height: 100%;
+}
+
 header {
     height: 68px;
     display: flex;
@@ -48,7 +55,6 @@ header {
     border-radius: 25px;
     height: 223px;
     width: 100%;
-    margin: 50px 100px 0;
 
     .banner-background {
         object-fit: cover;
@@ -129,6 +135,7 @@ header {
 }
 
 .collapse-bars {
+    width: 1024px;
     margin-top: 38px;
     display: flex;
     flex-direction: column;
@@ -136,11 +143,15 @@ header {
 }
 
 .collapse-bar {
+    position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     gap: 0;
 
     .top-bar {
+        position: relative;
+        z-index: 100;
         width: inherit;
         display: flex;
         justify-content: space-between;
@@ -164,7 +175,6 @@ header {
             color: white;
             width: 32px;
             height: 32px;
-            transform: rotate(0deg);
 
             &.closed {
                 background-color: $backgroundRed;
@@ -178,29 +188,39 @@ header {
         }
     }
 
-    > .open {
-        background-color: $backgroundGrey;
-        height: fit-content;
-        max-height: fit-content;
-        transition: height 0.3s ease-out;
-        width: 100%;
-        padding: 0 10px;
-        border-radius: 5px;
-    }
-    > .closed {
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease-out;
-        padding: 0 10px;
-        width: 100%;
-    }
+    .collapse-text {
+        position: relative;
+        transform: translateY(0);
+        width: inherit;
+        z-index: 0;
+        &.open {
+            background-color: $backgroundGrey;
+            max-height: 200px;
+            transition: all 0.3s ease-in-out;
+            // transform: scale(1, 1);
+            transform: translateY(0);
+            transform-origin: 50% top;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+        &.closed {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            padding: 0 10px;
+            // transform: scale(1, 0);
+            transform: translateY(-300px);
+            transform-origin: 50% top;
+        }
 
-    li,
-    p {
-        color: black;
-        font-weight: 400;
-        font-size: 18px;
-        overflow: hidden;
+        li,
+        p {
+            width: 100%;
+            text-align: justify;
+            color: black;
+            font-weight: 400;
+            font-size: 18px;
+        }
     }
 }
 
@@ -209,22 +229,18 @@ header {
     flex-direction: column;
     align-items: center;
     margin: 38px 100px;
-
-    .collapse-bar {
-        width: 1024px;
-    }
 }
 
 .not-found-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px; // 139px;
-    margin: 50px 0 139px; // 139px 0;
+    gap: 10px;
+    padding-bottom: 22px;
 
     .not-found {
         color: $backgroundRed;
-        font-size: 288px;
+        font-size: 200px;
         font-weight: 700;
         text-align: center;
         margin: 0;
@@ -315,6 +331,8 @@ header {
 }
 
 footer {
+    margin-top: auto;
+    width: 100%;
     height: 209px;
     background-color: black;
     display: flex;

@@ -56,7 +56,13 @@ const CollapseList = ({ category, entries }) => {
                     onClick={handleClickChevron}
                 ></i>
             </div>
-            <div className={clickedState ? "open" : "closed"}>{list}</div>
+            <div
+                className={
+                    "collapse-text " + (clickedState ? "open" : "closed")
+                }
+            >
+                {list}
+            </div>
         </div>
     );
 };

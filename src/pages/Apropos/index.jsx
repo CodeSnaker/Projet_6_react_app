@@ -7,6 +7,7 @@ const Apropos = () => {
     return (
         <main className='a-propos-container'>
             <Banner
+                className='banner-a-propos'
                 src={bannerBackground}
                 alt='Background with forest and mountains'
                 text=''

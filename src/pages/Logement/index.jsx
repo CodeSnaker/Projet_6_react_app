@@ -9,9 +9,9 @@ const Logement = () => {
     let logement = data.find((e) => e.id === logementId);
     if (!logement) return <NotFound />;
     return (
-        <>
+        <main>
             <ProfileLogement logement={logement} />
-        </>
+        </main>
     );
 };
 
