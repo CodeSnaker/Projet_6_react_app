@@ -1,19 +1,18 @@
 import PropTypes from "prop-types";
 import rightArrow from "../../assets/carousel_arrow_right.svg";
 import leftArrow from "../../assets/carousel_arrow_left.svg";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Slideshow = ({ images }) => {
+    let carouselRef = useRef(null);
     let [index, setIndex] = useState(0);
+    let [galleryWidth, setGalleryWidth] = useState(null);
+    let [carouselWidth, setCarouselWidth] = useState(null);
 
-    const sliderStyle = {
-        width: "100%",
-        height: "100%",
-        borderRadius: "inherit",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundImage: `url(${images[index]})`,
-    };
+    useEffect(() => {
+        setCarouselWidth(carouselRef.current.offsetWidth);
+        setGalleryWidth(carouselWidth * images.length);
+    }, [carouselRef.current]);
 
     const handleNextImage = () => {
         setIndex((index) => (index === images.length - 1 ? 0 : index + 1));
@@ -28,7 +27,7 @@ const Slideshow = ({ images }) => {
     carouselPictures = images.map((image, index) => {
         return (
             <img
-                className={"carousel-picture" + (i === 0 ? " active" : "")}
+                className={"carousel-picture"}
                 src={image}
                 alt='Image du logement'
                 id={i}
@@ -37,11 +36,17 @@ const Slideshow = ({ images }) => {
         );
     });
 
-    // TODO change carousel-gallery to img
-    // TODO test carousel animation
     return (
-        <section className='carousel'>
-            <div className='carousel-gallery' style={sliderStyle}></div>
+        <section className='carousel' ref={carouselRef}>
+            <div
+                className='carousel-gallery'
+                style={{
+                    width: galleryWidth,
+                    transform: `translateX(-${carouselWidth * index}px)`,
+                }}
+            >
+                {carouselPictures}
+            </div>
             {images.length > 1 && (
                 <>
                     <img

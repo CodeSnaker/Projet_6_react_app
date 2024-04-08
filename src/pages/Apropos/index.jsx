@@ -4,23 +4,22 @@ import CollapseList from "../../components/CollapseList";
 import data from "../../assets/apropos-resources.json";
 
 const Apropos = () => {
+    const entries = data.map((entry, index) => (
+        <CollapseList
+            category={entry.category}
+            entries={entry.entries}
+            key={index}
+        />
+    ));
+
     return (
         <main className='a-propos-container'>
             <Banner
-                className='banner-a-propos'
                 src={bannerBackground}
                 alt='Background with forest and mountains'
                 text=''
             />
-            <div className='collapse-bars'>
-                {data.map((entry, index) => (
-                    <CollapseList
-                        category={entry.category}
-                        entries={entry.entries}
-                        key={index}
-                    />
-                ))}
-            </div>
+            <div className='collapse-bars'>{entries}</div>
         </main>
     );
 };
