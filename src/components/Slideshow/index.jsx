@@ -10,10 +10,22 @@ const Slideshow = ({ images }) => {
     let [galleryWidth, setGalleryWidth] = useState(null);
     let [carouselWidth, setCarouselWidth] = useState(null);
 
-    useEffect(() => {
+    const setWidth = () => {
         setCarouselWidth(carouselRef.current.offsetWidth);
         setGalleryWidth(carouselWidth * images.length);
+    };
+
+    useEffect(() => {
+        setWidth();
     }, [carouselRef.current]);
+
+    window.addEventListener("resize", () => {
+        setWidth();
+    });
+
+    window.addEventListener("fullscreenchange", () => {
+        setWidth();
+    });
 
     const handleNextImage = () => {
         setIndex((index) => (index === images.length - 1 ? 0 : index + 1));
@@ -33,6 +45,7 @@ const Slideshow = ({ images }) => {
                 alt='Image du logement'
                 id={i}
                 key={i++}
+                style={{ width: carouselWidth }}
             />
         );
     });

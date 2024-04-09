@@ -1,9 +1,11 @@
 @import "../../utils/styles/colors";
+@import "../../utils/styles/media";
 
 .thumbnail {
+    display: flex;
+    align-items: center;
     position: relative;
     border-radius: 10px;
-    width: 340px;
     height: 340px;
     background-color: $primaryRed;
 

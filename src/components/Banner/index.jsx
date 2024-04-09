@@ -4,9 +4,9 @@ import "./styles.scss";
 const Banner = ({ src, alt, text }) => {
     return (
         <div className='banner'>
-            <img className='banner-background' src={src} alt={alt} />
+            {src && <img className='banner-background' src={src} alt={alt} />}
             <div className='banner-filter'></div>
-            <div className='banner-content'>{text}</div>
+            {text && <h1 className='banner-content'>{text}</h1>}
         </div>
     );
 };

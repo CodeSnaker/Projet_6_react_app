@@ -10,7 +10,6 @@ const Gallery = () => {
             <Card
                 id={location.id}
                 src={location.cover}
-                alt={location.title}
                 title={location.title}
                 key={location.id}
             />

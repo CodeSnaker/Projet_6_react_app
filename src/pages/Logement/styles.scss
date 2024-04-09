@@ -1,4 +1,5 @@
 @import "../../utils/styles/colors";
+@import "../../utils/styles/media";
 
 .profile-logement {
     display: flex;
@@ -59,6 +60,7 @@
                     border-radius: 32px;
                 }
                 .host-name {
+                    max-width: 150px;
                     color: $primaryRed;
                     font-size: 18px;
                     text-align: right;
@@ -88,6 +90,77 @@
 
         .collapse-bar {
             width: 586px;
+        }
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        margin: 27px 20px;
+
+        .logement-infos {
+            margin: 15px 0 13px;
+            flex-direction: column;
+
+            .logement-head {
+                gap: 10px;
+
+                .logement-head-text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    h1 {
+                        font-size: 18px;
+                        text-wrap: pretty;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                .tags .tag {
+                    width: 84px;
+                }
+            }
+
+            .host-and-rating {
+                margin-top: 16px;
+                width: 100%;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+
+                .host {
+                    .host-name {
+                        font-size: 12px;
+                    }
+
+                    .host-picture {
+                        height: 32px;
+                        width: 32px;
+                        border-radius: 16px;
+                    }
+                }
+
+                .rating {
+                    height: 18px;
+                    width: 98px;
+
+                    .fa-star {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        .logement-bars {
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+
+            .collapse-bar {
+                width: 100%;
+            }
         }
     }
 }

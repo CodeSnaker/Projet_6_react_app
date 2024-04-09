@@ -9,18 +9,16 @@ const CollapseList = ({ category, entries }) => {
         setClickedState((clickedState) => !clickedState);
     };
 
-    let list = "";
-    if (typeof entries === "string") {
-        list = <p>{entries}</p>;
-    } else {
-        list = (
+    let list =
+        typeof entries === "string" ? (
+            <p>{entries}</p>
+        ) : (
             <ul>
                 {entries.map((entry, index) => {
                     return <li key={index}>{entry}</li>;
                 })}
             </ul>
         );
-    }
 
     return (
         <div className='collapse-bar'>
@@ -50,7 +48,7 @@ CollapseList.proptypes = {
     entries: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.arrayOf(PropTypes.string),
-    ]),
+    ]).isRequired,
 };
 
 export default CollapseList;

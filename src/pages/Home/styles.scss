@@ -1,3 +1,5 @@
+@import "../../utils/styles/media";
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,8 @@
     gap: 43px;
     margin: 50px 100px;
 
-    .gallery {
-        padding: 56px 50px 43px;
+    @media (max-width: $mobileMaxWidth) {
+        margin: 27px 20px;
+        gap: 22px;
     }
 }

@@ -1,8 +1,12 @@
+@import "../../utils/styles/colors";
+@import "../../utils/styles/media";
+
 .banner {
     position: relative;
     border-radius: 25px;
     height: 223px;
     width: 100%;
+    background-color: $primaryRed;
 
     .banner-background {
         object-fit: cover;
@@ -36,5 +40,16 @@
         -webkit-text-stroke: 1px black;
         text-shadow: rgba(0, 0, 0, 0.25) 0 4px 4px;
         inline-size: max-content;
+        margin: 0;
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        height: 111px;
+
+        .banner-content {
+            font-size: 24px;
+            max-width: 225px;
+            text-wrap: balance;
+        }
     }
 }

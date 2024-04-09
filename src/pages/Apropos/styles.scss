@@ -1,3 +1,5 @@
+@import "../../utils/styles/media";
+
 .a-propos-container {
     display: flex;
     flex-direction: column;
@@ -10,5 +12,15 @@
         display: flex;
         flex-direction: column;
         gap: 28px;
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        margin: 19px 19.5px;
+
+        .collapse-bars {
+            width: 100%;
+            margin-top: 19px;
+            gap: 20px;
+        }
     }
 }

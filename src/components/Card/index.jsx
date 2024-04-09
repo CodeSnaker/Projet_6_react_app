@@ -5,7 +5,7 @@ import "./styles.scss";
 const Card = ({ id, src, alt, title }) => {
     return (
         <Link to={"Logement/" + id} className='thumbnail'>
-            <img src={src} alt={alt} />
+            <img src={src} alt={alt ? alt : ""} />
             <div className='thumbnail-title'>{title}</div>
         </Link>
     );
@@ -14,7 +14,7 @@ const Card = ({ id, src, alt, title }) => {
 Card.propTypes = {
     id: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    alt: PropTypes.string,
     title: PropTypes.string.isRequired,
 };
 

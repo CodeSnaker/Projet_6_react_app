@@ -26,7 +26,13 @@ const Header = () => {
     return (
         <header>
             <Link to='/'>
-                <img src={Logo} className='logo' alt='Logo Kasa' />
+                <img
+                    src={Logo}
+                    srcSet={LogoMobile + " 146w, " + Logo + " 211w"}
+                    sizes='(max-width: 480px) 146px, 211px'
+                    className='logo'
+                    alt='Logo Kasa'
+                />
             </Link>
             <nav>
                 <Link to='/' className='nav-link' id='link-accueil'>

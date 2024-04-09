@@ -1,9 +1,23 @@
 @import "../../utils/styles/colors";
+@import "../../utils/styles/media";
 
 .gallery {
+    width: 100%;
     background-color: $backgroundGrey;
     border-radius: 25px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px 50px;
+    box-sizing: border-box;
+    padding: 56px 50px 43px;
+
+    @media (max-width: $mobileMaxWidth) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        background-color: transparent;
+        padding: 0;
+        gap: 20px;
+    }
 }
