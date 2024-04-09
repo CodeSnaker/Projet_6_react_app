@@ -13,19 +13,47 @@ const Slideshow = ({ images }) => {
     const setWidth = () => {
         setCarouselWidth(carouselRef.current.offsetWidth);
         setGalleryWidth(carouselWidth * images.length);
+        console.log(carouselWidth);
+        console.log(galleryWidth);
     };
 
     useEffect(() => {
         setWidth();
     }, [carouselRef.current]);
 
-    window.addEventListener("resize", () => {
-        setWidth();
-    });
+    /* Carousel Responsiveness */
 
-    window.addEventListener("fullscreenchange", () => {
-        setWidth();
-    });
+    useEffect(() => {
+        document.body.addEventListener("resize", () => {
+            setWidth();
+        });
+
+        return document.body.removeEventListener("resize", () => {
+            setWidth();
+        });
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setWidth();
+        });
+
+        return window.removeEventListener("resize", () => {
+            setWidth();
+        });
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("fullscreenchange", () => {
+            setWidth();
+        });
+
+        return window.removeEventListener("fullscreenchange", () => {
+            setWidth();
+        });
+    }, []);
+
+    /* Carousel responsiveness end */
 
     const handleNextImage = () => {
         setIndex((index) => (index === images.length - 1 ? 0 : index + 1));
@@ -45,7 +73,7 @@ const Slideshow = ({ images }) => {
                 alt='Image du logement'
                 id={i}
                 key={i++}
-                style={{ width: carouselWidth }}
+                style={{ width: `${carouselWidth}px` }}
             />
         );
     });
