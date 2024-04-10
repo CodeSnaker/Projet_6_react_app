@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import "./styles.scss";
 
 function NotFound() {
     return (
         <main className='not-found-container'>
-            <p className='not-found'>404</p>
+            <h1 className='not-found'>404</h1>
             <p className='not-found-prompt'>
                 Oups! La page que vous demandez n'existe pas.
             </p>

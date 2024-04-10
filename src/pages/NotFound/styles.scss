@@ -1,4 +1,5 @@
 @import "../../utils/styles/colors";
+@import "../../utils/styles/media";
 
 .not-found-container {
     display: flex;
@@ -26,5 +27,21 @@
         color: black;
         text-decoration: underline;
         text-align: center;
+    }
+
+    @media (max-width: $mobileMaxWidth) {
+        padding-bottom: 113px;
+
+        .not-found {
+            font-size: 96px;
+        }
+
+        .not-found-prompt {
+            font-size: 18px;
+        }
+
+        a.not-found-link {
+            font-size: 14px;
+        }
     }
 }
