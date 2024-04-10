@@ -11,8 +11,9 @@ const Slideshow = ({ images }) => {
     let [carouselWidth, setCarouselWidth] = useState(null);
 
     const setWidth = () => {
-        setCarouselWidth(carouselRef.current.offsetWidth);
-        setGalleryWidth(carouselWidth * images.length);
+        const width = carouselRef.current.offsetWidth;
+        setCarouselWidth(width);
+        setGalleryWidth(width * images.length);
         console.log(carouselWidth);
         console.log(galleryWidth);
     };
@@ -83,7 +84,7 @@ const Slideshow = ({ images }) => {
             <div
                 className='carousel-gallery'
                 style={{
-                    width: galleryWidth,
+                    width: `${galleryWidth}px`,
                     transform: `translateX(-${carouselWidth * index}px)`,
                 }}
             >
