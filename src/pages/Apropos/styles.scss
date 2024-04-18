@@ -3,7 +3,9 @@
 .a-propos-container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    height: 100%;
     margin: 38px 100px;
 
     .collapse-bars {
