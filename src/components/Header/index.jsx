@@ -29,7 +29,7 @@ const Header = () => {
                 <img
                     src={Logo}
                     srcSet={LogoMobile + " 146w, " + Logo + " 211w"}
-                    sizes='(max-width: 480px) 146px, 211px'
+                    sizes='(max-width: 540px) 146px, 211px'
                     className='logo'
                     alt='Logo Kasa'
                 />

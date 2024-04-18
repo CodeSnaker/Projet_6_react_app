@@ -10,19 +10,17 @@ const Slideshow = ({ images }) => {
     let [galleryWidth, setGalleryWidth] = useState(null);
     let [carouselWidth, setCarouselWidth] = useState(null);
 
+    /* Carousel Responsiveness */
+
     const setWidth = () => {
         const width = carouselRef.current.offsetWidth;
         setCarouselWidth(width);
         setGalleryWidth(width * images.length);
-        console.log(carouselWidth);
-        console.log(galleryWidth);
     };
 
     useEffect(() => {
         setWidth();
     }, [carouselRef.current]);
-
-    /* Carousel Responsiveness */
 
     useEffect(() => {
         document.body.addEventListener("resize", () => {

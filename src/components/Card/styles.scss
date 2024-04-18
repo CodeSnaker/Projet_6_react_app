@@ -26,4 +26,8 @@
         font-weight: 700;
         z-index: 1;
     }
+
+    @media (max-width: $mobileMaxWidth) {
+        height: 225px;
+    }
 }

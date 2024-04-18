@@ -11,7 +11,6 @@
     .logement-infos {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         width: 100%;
         margin: 24px 0;
 
@@ -38,7 +37,7 @@
                 align-items: center;
 
                 .tag {
-                    width: 115px;
+                    min-width: 115px;
                 }
             }
         }
@@ -119,7 +118,7 @@
                 }
 
                 .tags .tag {
-                    width: 84px;
+                    min-width: 84px;
                 }
             }
 
