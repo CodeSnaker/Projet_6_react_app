@@ -2,6 +2,7 @@
 @import "../../utils/styles/media";
 
 .not-found-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
